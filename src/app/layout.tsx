@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SmoothScroll from "@/components/animation/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Folium",
@@ -77,6 +78,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <SmoothScroll/>
         {children}
       </body>
     </html>
