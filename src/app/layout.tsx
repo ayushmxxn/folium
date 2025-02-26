@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Folium",
-  description: "Build your portfolio and resume in minutes. Export as a React component or PDF.",
+  description: "📄Build your portfolio and resume in minutes, then export them as a React component or PDF.",
   metadataBase: new URL("https://folium-ayushmxxn-projects.vercel.app/"),
   keywords: [
   "portfolio builder",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
   title: "Folium",
-  description:"Build your portfolio and resume in minutes. Export as a React component or PDF.",
+  description:"📄Build your portfolio and resume in minutes, then export them as a React component or PDF.",
   url: "opengraph.jpeg",
   siteName: "Folium",
   locale: "en_US",
