@@ -1083,32 +1083,17 @@ export default Resume;`;
         id="resume-preview"
         className={`
           ${isDarkMode ? "bg-black text-white" : "bg-white text-black"}
-          ${window.innerWidth <= 768 ? "p-4" : "p-6 max-w-4xl mx-auto"}
+          p-4 md:p-6 max-w-4xl mx-auto
         `}
       >
         <header className="flex flex-col md:flex-row justify-between items-start mb-6 relative">
           <div className="w-full mb-4 md:mb-0">
             <div className="flex items-start justify-between w-full">
               <div>
-                <h1
-                  className={`
-                  ${window.innerWidth <= 768 ? "text-2xl" : "text-4xl"}
-                  font-bold tracking-tight mb-1
-                `}
-                >
+                <h1 className="text-2xl md:text-4xl font-bold tracking-tight mb-1">
                   {personalInfo.name}
                 </h1>
-                <h2
-                  className={`
-                  ${
-                    window.innerWidth <= 768
-                      ? "text-base"
-                      : "text-lg md:text-xl"
-                  }
-                  font-medium ${isDarkMode ? "text-white/70" : "text-black/70"}
-                  mb-4
-                `}
-                >
+                <h2 className="text-base md:text-xl font-medium mb-4 ${isDarkMode ? 'text-white/70' : 'text-black/70'}">
                   {personalInfo.title}
                 </h2>
 
@@ -1176,45 +1161,25 @@ export default Resume;`;
                 </div>
               </div>
 
-              {window.innerWidth <= 768 && personalInfo.location && (
-                <div className="flex items-center gap-1">
-                  <MapPin
-                    className={`h-4 w-4 ${
-                      isDarkMode ? "text-white/70" : "text-black/70"
-                    }`}
-                    strokeWidth={2}
-                  />
-                  <span
-                    className={`text-sm ${
-                      isDarkMode ? "text-white/70" : "text-black/70"
-                    }`}
-                  >
-                    {personalInfo.location}
-                  </span>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {window.innerWidth > 768 && personalInfo.location && (
-            <div className="relative flex-col items-end mb-6 py-4">
-              <div className="flex items-center gap-2">
-                <MapPin
-                  className={`h-4 w-4 ${
-                    isDarkMode ? "text-white/70" : "text-black/70"
-                  }`}
-                  strokeWidth={2}
-                />
-                <span
-                  className={`text-base ${
-                    isDarkMode ? "text-white/70" : "text-black/70"
-                  }`}
-                >
+              {/* Location for mobile */}
+              <div className="flex md:hidden items-center gap-1">
+                <MapPin className={`h-4 w-4 ${isDarkMode ? "text-white/70" : "text-black/70"}`} strokeWidth={2} />
+                <span className={`text-sm ${isDarkMode ? "text-white/70" : "text-black/70"}`}>
                   {personalInfo.location}
                 </span>
               </div>
             </div>
-          )}
+          </div>
+
+          {/* Location for desktop */}
+          <div className="hidden md:flex relative flex-col items-end mb-6 py-4">
+            <div className="flex items-center gap-2">
+              <MapPin className={`h-4 w-4 ${isDarkMode ? "text-white/70" : "text-black/70"}`} strokeWidth={2} />
+              <span className={`text-base ${isDarkMode ? "text-white/70" : "text-black/70"}`}>
+                {personalInfo.location}
+              </span>
+            </div>
+          </div>
         </header>
 
         <section className="mb-6">
@@ -1674,7 +1639,14 @@ export default Resume;`;
       <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-bold">Resume Builder</h1>
+          <div className="flex items-center space-x-1">
+          <svg width="24" height="24" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" 
+            stroke="currentColor" strokeWidth="8" fill="none"/>
+          <polygon points="50,30 65,50 50,70 35,50" fill="currentColor"/>
+        </svg>
+          <h1 className="text-lg font-bold">Folium</h1>
+        </div>
 
             <div className="hidden lg:flex items-center space-x-2">
               <a
@@ -2454,11 +2426,7 @@ export default Resume;`;
                                     id={`edu-end-date-${edu.id}`}
                                     value={edu.endDate}
                                     onChange={(e) =>
-                                      updateEducation(
-                                        edu.id,
-                                        "endDate",
-                                        e.target.value
-                                      )
+                                      updateEducation(edu.id, "endDate", e.target.value)
                                     }
                                     placeholder="YYYY-MM, MMM YYYY, or Present"
                                     className={`dark-mode-input ${
