@@ -46,15 +46,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
   title: "Folium",
-  description:
-  "Build your portfolio and resume in minutes. Export as a React component or PDF.",
-  url: "opengraph.png",
+  description:"Build your portfolio and resume in minutes. Export as a React component or PDF.",
+  url: "opengraph.jpeg",
   siteName: "Folium",
   locale: "en_US",
   type: "website",
   images: [
   {
-  url: "opengraph.png",
+  url: "opengraph.jpeg",
   width: 1200,
   height: 630,
   alt: "Folium",
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
   card: "summary_large_image",
   creator: "Ayushmaan Singh",
-  images: ["opengraph.png"],
+  images: ["opengraph.jpeg"],
   },
   };
 
