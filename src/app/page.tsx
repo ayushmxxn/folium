@@ -1650,7 +1650,7 @@ export default Resume;`;
 
             <div className="hidden lg:flex items-center space-x-2">
               <a
-                href="https://github.com/yourusername/your-repo"
+                href="https://github.com/ayushmxxn/folium"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center space-x-2 px-4 py-1.5 rounded-full transition-colors ${
